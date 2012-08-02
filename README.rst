@@ -1,6 +1,6 @@
 
-Org Repo Cloner
-===============
+GitHub Repo Cloner
+==================
 
 Because GitHub delete is permanent.
 
