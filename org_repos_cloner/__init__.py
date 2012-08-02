@@ -6,7 +6,7 @@ import requests
 
 
 GITHUB = 'https://api.github.com'
-ORG = 'plone'
+ORG = 'plone'  # XXX Support orgs on the command line next, of course.
 NUM_PAGES = range(3)  # XXX Fix me, use API to get the real number of pages
 
 
