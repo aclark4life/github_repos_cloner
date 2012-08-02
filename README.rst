@@ -24,7 +24,7 @@ Install::
 Usage
 -----
 
-Use::
+Use like so::
 
     $ github_repo_cloner USER_OR_ORG
 
