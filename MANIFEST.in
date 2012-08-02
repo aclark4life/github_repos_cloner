@@ -1,0 +1,3 @@
+include *
+recursive-include docs *
+recursive-include org_repos_cloner *
