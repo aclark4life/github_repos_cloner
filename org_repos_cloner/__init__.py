@@ -17,6 +17,8 @@ def clone_org_repos():
             GITHUB, ORG, page + 1)).content
         for repo in json.loads(repos):
             name = repo['name']
+            if name == 'org_repos_cloner':  # Don't clone the cloner, man
+                continue
             if os.path.exists(name):
                 print '-> Updating %s' % name
                 os.chdir(name)
