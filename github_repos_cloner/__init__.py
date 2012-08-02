@@ -29,9 +29,12 @@ def clone_repos():
             for repo in repos:
                 name = repo['name']
                 if os.path.exists(name):
-                    print '-> Updating %s' % name
                     os.chdir(name)
-                    pbs.git('pull')
+                    try:
+                        print '-> Updating %s' % name
+                        pbs.git('pull')
+                    except:
+                        print '-> Updating %s, git pull failed!' % name
                     os.chdir('..')  # XXX Fix me, proper mult-plat parent dir?
                 else:
                     print '-> Cloning %s' % name
