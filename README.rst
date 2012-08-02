@@ -19,7 +19,7 @@ Install
 
 Install::
 
-    $ {easy_install,pip} github_repo_cloner
+    $ {easy_install, pip} github_repo_cloner
 
 Usage
 -----

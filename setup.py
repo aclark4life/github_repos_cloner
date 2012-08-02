@@ -6,7 +6,9 @@ version = '0.0.2'
 setup(name='github_repos_cloner',
       version=version,
       description="Clone all the github repos for backup purposes",
-      long_description=open('README.rst').read(),
+      long_description=(
+            open('README.rst').read() + '\n' +
+            open('CHANGES.txt').read()),
       classifiers=[
         'Environment :: Console',
       ], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
