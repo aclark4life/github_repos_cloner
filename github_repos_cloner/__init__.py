@@ -8,10 +8,10 @@ import sys
 
 GITHUB = 'https://api.github.com'
 NUM_PAGES = range(3)  # XXX Fix me, use API to get the real number of pages
-ACCT_TYPE = (
-    'orgs',
-    'user',
-)
+ACCT_TYPE = {
+    'org': '%s/orgs/%s/repos?per_page=100&page=%s',
+    'user': '%s/users/%s/repos?per_page=100&page=%s',
+}
 
 
 def clone_repos():
@@ -21,12 +21,12 @@ def clone_repos():
 
     for account_type in ACCT_TYPE:
         for page in NUM_PAGES:
-            repos = requests.get('%s/%s/%s/repos?per_page=100&page=%s' % (
-                GITHUB, account_type, user_or_org, page + 1)).content
-            for repo in json.loads(repos):
+            repos = requests.get(ACCT_TYPE[account_type] % (GITHUB, user_or_org, page + 1)).content
+            repos = json.loads(repos)
+            if 'message' in repos:  # gh error
+                break
+            for repo in repos:
                 name = repo['name']
-                if name == 'org_repos_cloner':  # Don't clone the cloner, man
-                    continue
                 if os.path.exists(name):
                     print '-> Updating %s' % name
                     os.chdir(name)
