@@ -18,6 +18,7 @@ setup(name='org_repos_cloner',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+        'pbs',
         'requests',
       ],
       entry_points={
