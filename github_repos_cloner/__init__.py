@@ -21,7 +21,8 @@ def clone_repos():
 
     for account_type in ACCT_TYPE:
         for page in NUM_PAGES:
-            repos = requests.get(ACCT_TYPE[account_type] % (GITHUB, user_or_org, page + 1)).content
+            repos = requests.get(ACCT_TYPE[account_type] % (GITHUB,
+                user_or_org, page + 1)).content
             repos = json.loads(repos)
             if 'message' in repos:  # gh error
                 break
@@ -30,7 +31,7 @@ def clone_repos():
                 if os.path.exists(name):
                     print '-> Updating %s' % name
                     os.chdir(name)
-                    pbs.git('pull') 
+                    pbs.git('pull')
                     os.chdir('..')  # XXX Fix me, proper mult-plat parent dir?
                 else:
                     print '-> Cloning %s' % name
