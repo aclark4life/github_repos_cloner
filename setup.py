@@ -5,15 +5,16 @@ version = '0.0.1'
 
 setup(name='org_repos_cloner',
       version=version,
-      description="Clone all the repos of an org for backup purposes",
-      long_description="""\
-""",
-      classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
-      keywords='',
+      description="Clone all the repos of an org, for backup purposes",
+      long_description=open('README.rst').read(),
+      classifiers=[
+        'Environment :: Console',
+      ], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      keywords='backup clone git organization',
       author='Alex Clark',
       author_email='aclark@aclark.net',
       url='https://github.com/plone/org_repos_cloner',
-      license='',
+      license='GPL',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
       zip_safe=False,

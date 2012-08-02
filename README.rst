@@ -4,8 +4,23 @@ Org Repo Cloner
 
 Because GitHub delete is permanent.
 
-Plone
+Install
+-------
+
+Install::
+
+    $ {easy_install,pip} org_repo_cloner
+
+Usage
 -----
 
-Currently only supports Plone organization, but that could change.
+Use::
 
+    $ org_repo_cloner ORG
+
+Example
+-------
+
+In this example, all of the plone org's repos will be cloned/updated to the cwd::
+
+    $ org_repo_cloner plone
