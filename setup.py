@@ -21,6 +21,6 @@ setup(name='org_repos_cloner',
         'requests',
       ],
       entry_points={
-        'console_scripts': 'org_repos_cloner.clone_org_repos',
+        'console_scripts': 'org_repos_cloner=org_repos_cloner:clone_org_repos',
       }
       )
