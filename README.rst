@@ -19,18 +19,18 @@ Install
 
 Install::
 
-    $ {easy_install, pip} github_repo_cloner
+    $ {easy_install, pip} github_repos_cloner
 
 Usage
 -----
 
 Use like so::
 
-    $ github_repo_cloner USER_OR_ORG
+    $ github_repos_cloner USER_OR_ORG
 
 Example
 -------
 
 In this example, all of the plone org's repos will be cloned/updated to the cwd::
 
-    $ github_repo_cloner plone
+    $ github_repos_cloner plone
